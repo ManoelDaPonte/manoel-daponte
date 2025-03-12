@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
 	Code,
 	Server,
@@ -96,52 +98,87 @@ export default function Skills() {
 		},
 	];
 
+	// Animation variants
+	const container = {
+		hidden: { opacity: 0 },
+		show: {
+			opacity: 1,
+			transition: {
+				staggerChildren: 0.1,
+				delayChildren: 0.3,
+			},
+		},
+	};
+
+	const item = {
+		hidden: { opacity: 0, y: 20 },
+		show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+	};
+
 	return (
 		<section id="skills" className="py-20">
-			<div
-				className={`container mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-1000 ${
-					isVisible
-						? "opacity-100 translate-y-0"
-						: "opacity-0 translate-y-10"
-				}`}
-			>
-				<div className="text-center mb-12">
+			<div className="container mx-auto px-4 sm:px-6 lg:px-8">
+				<motion.div
+					className="text-center mb-12"
+					initial={{ opacity: 0, y: 20 }}
+					animate={
+						isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+					}
+					transition={{ duration: 0.6 }}
+				>
 					<h2 className="text-3xl font-bold mb-4">Compétences</h2>
 					<div className="h-1 w-20 bg-primary mx-auto"></div>
 					<p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
 						Une large gamme de compétences techniques pour répondre
 						à divers besoins en développement et analyse de données.
 					</p>
-				</div>
+				</motion.div>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+				<motion.div
+					className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+					variants={container}
+					initial="hidden"
+					animate={isVisible ? "show" : "hidden"}
+				>
 					{skillCategories.map((category, index) => (
-						<div
+						<motion.div
 							key={index}
-							className="bg-card rounded-lg p-6 shadow-sm border border-border hover:border-primary transition-colors"
+							variants={item}
+							whileHover={{
+								scale: 1.03,
+								boxShadow:
+									"0 10px 30px -15px var(--color-ring)",
+							}}
+							transition={{ duration: 0.2 }}
 						>
-							<div className="flex items-center gap-3 mb-4">
-								<div className="text-primary">
-									{category.icon}
-								</div>
-								<h3 className="font-semibold">
-									{category.title}
-								</h3>
-							</div>
-
-							<ul className="space-y-2">
-								{category.skills.map((skill, skillIndex) => (
-									<li
-										key={skillIndex}
-										className="text-muted-foreground"
-									>
-										{skill}
-									</li>
-								))}
-							</ul>
-						</div>
+							<Card className="h-full border-border hover:border-primary/50 transition-all duration-300">
+								<CardHeader className="pb-2">
+									<CardTitle className="flex items-center gap-3">
+										<div className="text-primary">
+											{category.icon}
+										</div>
+										<span>{category.title}</span>
+									</CardTitle>
+								</CardHeader>
+								<CardContent>
+									<ul className="space-y-2">
+										{category.skills.map(
+											(skill, skillIndex) => (
+												<li
+													key={skillIndex}
+													className="text-muted-foreground flex items-center gap-2"
+												>
+													<span className="h-1.5 w-1.5 rounded-full bg-primary inline-block"></span>
+													{skill}
+												</li>
+											)
+										)}
+									</ul>
+								</CardContent>
+							</Card>
+						</motion.div>
 					))}
-				</div>
+				</motion.div>
 			</div>
 		</section>
 	);

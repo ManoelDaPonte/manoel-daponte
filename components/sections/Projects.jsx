@@ -1,8 +1,18 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ExternalLink, Github } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import { ExternalLink, Github, Calendar, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import {
+	Card,
+	CardContent,
+	CardFooter,
+	CardHeader,
+	CardTitle,
+} from "@/components/ui/card";
 
 export default function Projects() {
 	const [isVisible, setIsVisible] = useState(false);
@@ -70,16 +80,34 @@ export default function Projects() {
 		},
 	];
 
+	// Animation variants
+	const container = {
+		hidden: { opacity: 0 },
+		show: {
+			opacity: 1,
+			transition: {
+				staggerChildren: 0.2,
+				delayChildren: 0.3,
+			},
+		},
+	};
+
+	const item = {
+		hidden: { opacity: 0, y: 30 },
+		show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+	};
+
 	return (
 		<section id="projects" className="py-20">
-			<div
-				className={`container mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-1000 ${
-					isVisible
-						? "opacity-100 translate-y-0"
-						: "opacity-0 translate-y-10"
-				}`}
-			>
-				<div className="text-center mb-12">
+			<div className="container mx-auto px-4 sm:px-6 lg:px-8">
+				<motion.div
+					className="text-center mb-12"
+					initial={{ opacity: 0, y: 20 }}
+					animate={
+						isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+					}
+					transition={{ duration: 0.6 }}
+				>
 					<h2 className="text-3xl font-bold mb-4">
 						Projets Significatifs
 					</h2>
@@ -88,79 +116,111 @@ export default function Projects() {
 						Une sélection de projets personnels et professionnels
 						que j'ai développés.
 					</p>
-				</div>
+				</motion.div>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<motion.div
+					className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+					variants={container}
+					initial="hidden"
+					animate={isVisible ? "show" : "hidden"}
+				>
 					{projects.map((project, index) => (
-						<div
+						<motion.div
 							key={index}
-							className="bg-card rounded-lg overflow-hidden shadow-sm border border-border hover:shadow-md transition-shadow flex flex-col"
+							variants={item}
+							whileHover={{
+								scale: 1.02,
+								boxShadow:
+									"0 10px 30px -15px var(--color-ring)",
+							}}
+							transition={{ duration: 0.2 }}
 						>
-							{/* Project thumbnail placeholder */}
-							<div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-								<span className="text-lg font-medium">
-									Image du projet
-								</span>
-							</div>
-
-							<div className="p-6 flex-grow">
-								<h3 className="text-xl font-bold mb-2">
-									{project.title}
-								</h3>
-
-								<div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-									<span>{project.year}</span>
-									<span>•</span>
-									<span>{project.location}</span>
+							<Card className="h-full flex flex-col overflow-hidden">
+								<div className="relative h-56 overflow-hidden">
+									<Image
+										src="/placeholder.png"
+										alt={`Image du projet ${project.title}`}
+										fill
+										sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+										className="object-cover transition-transform duration-500 hover:scale-105"
+									/>
 								</div>
 
-								<p className="text-muted-foreground mb-4">
-									{project.description}
-								</p>
-
-								<div className="mb-4">
-									<h4 className="font-semibold mb-2">
-										Technologies utilisées:
-									</h4>
-									<div className="flex flex-wrap gap-2">
-										{project.technologies.map(
-											(tech, techIndex) => (
-												<span
-													key={techIndex}
-													className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm"
-												>
-													{tech}
-												</span>
-											)
-										)}
+								<CardHeader>
+									<CardTitle>{project.title}</CardTitle>
+									<div className="flex items-center gap-4 text-sm text-muted-foreground mt-2">
+										<div className="flex items-center gap-1">
+											<Calendar size={14} />
+											<span>{project.year}</span>
+										</div>
+										<div className="flex items-center gap-1">
+											<MapPin size={14} />
+											<span>{project.location}</span>
+										</div>
 									</div>
-								</div>
-							</div>
+								</CardHeader>
 
-							<div className="p-6 pt-0 flex justify-between">
-								<Link
-									href={project.link}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="inline-flex items-center gap-1 text-primary hover:underline"
-								>
-									<ExternalLink size={16} />
-									<span>Voir le projet</span>
-								</Link>
+								<CardContent className="flex-grow">
+									<p className="text-muted-foreground">
+										{project.description}
+									</p>
 
-								<Link
-									href={project.githubLink}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="inline-flex items-center gap-1 text-primary hover:underline"
-								>
-									<Github size={16} />
-									<span>GitHub</span>
-								</Link>
-							</div>
-						</div>
+									<div className="mt-4">
+										<h4 className="font-semibold mb-2">
+											Technologies utilisées:
+										</h4>
+										<div className="flex flex-wrap gap-2">
+											{project.technologies.map(
+												(tech, techIndex) => (
+													<span
+														key={techIndex}
+														className="px-2 py-1 bg-secondary text-secondary-foreground rounded-full text-xs"
+													>
+														{tech}
+													</span>
+												)
+											)}
+										</div>
+									</div>
+								</CardContent>
+
+								<CardFooter className="flex justify-between pt-4 border-t border-border">
+									<Button
+										asChild
+										variant="outline"
+										size="sm"
+										className="gap-1"
+									>
+										<Link
+											href={project.link}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<ExternalLink size={14} />
+											<span>Voir le projet</span>
+										</Link>
+									</Button>
+
+									<Button
+										asChild
+										variant="github"
+										size="sm"
+										className="gap-1"
+									>
+										<Link
+											href={project.githubLink}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<Github size={14} />
+											<span>GitHub</span>
+										</Link>
+									</Button>
+								</CardFooter>
+							</Card>
+						</motion.div>
 					))}
-				</div>
+				</motion.div>
 			</div>
 		</section>
 	);

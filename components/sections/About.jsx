@@ -1,8 +1,26 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { Download } from "lucide-react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { IconCloud } from "@/components/magicui/icon-cloud";
+import {
+	Code,
+	Server,
+	Database,
+	LineChart,
+	Cpu,
+	Globe,
+	Cloud,
+	Layout,
+	BrainCircuit,
+	Laptop,
+	GitBranch,
+	PackageOpen,
+	Layers,
+	Workflow,
+} from "lucide-react";
 
 export default function About() {
 	const [isVisible, setIsVisible] = useState(false);
@@ -26,29 +44,71 @@ export default function About() {
 		};
 	}, []);
 
+	const techIcons = [
+		<Code size={40} />,
+		<Server size={40} />,
+		<Database size={40} />,
+		<LineChart size={40} />,
+		<Cpu size={40} />,
+		<Globe size={40} />,
+		<Cloud size={40} />,
+		<Layout size={40} />,
+		<BrainCircuit size={40} />,
+		<Laptop size={40} />,
+		<GitBranch size={40} />,
+		<PackageOpen size={40} />,
+		<Layers size={40} />,
+		<Workflow size={40} />,
+	];
+
 	return (
 		<section id="about" className="py-20 bg-secondary">
-			<div
-				className={`container mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-1000 ${
-					isVisible
-						? "opacity-100 translate-y-0"
-						: "opacity-0 translate-y-10"
-				}`}
-			>
-				<div className="text-center mb-12">
+			<div className="container mx-auto px-4 sm:px-6 lg:px-8">
+				<motion.div
+					className="text-center mb-12"
+					initial={{ opacity: 0, y: 20 }}
+					animate={
+						isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+					}
+					transition={{ duration: 0.6 }}
+				>
 					<h2 className="text-3xl font-bold mb-4">À propos de moi</h2>
 					<div className="h-1 w-20 bg-primary mx-auto"></div>
-				</div>
+				</motion.div>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-					<div className="relative aspect-square rounded-full overflow-hidden mx-auto md:ml-0 max-w-xs">
-						{/* This is a placeholder. Replace with your actual image */}
-						<div className="w-full h-full bg-gradient-to-br from-primary/40 to-accent/40 flex items-center justify-center text-white">
-							<span className="text-lg">Photo</span>
-						</div>
-					</div>
+					<motion.div
+						className="relative rounded-xl overflow-hidden bg-secondary/50 border border-border p-4"
+						initial={{ opacity: 0, x: -50 }}
+						animate={
+							isVisible
+								? { opacity: 1, x: 0 }
+								: { opacity: 0, x: -50 }
+						}
+						transition={{ duration: 0.8, delay: 0.2 }}
+					>
+						<IconCloud icons={techIcons} />
+						<motion.p
+							className="text-center text-sm mt-4 text-muted-foreground"
+							initial={{ opacity: 0 }}
+							animate={
+								isVisible ? { opacity: 1 } : { opacity: 0 }
+							}
+							transition={{ duration: 0.8, delay: 1 }}
+						>
+							Mes technologies et compétences
+						</motion.p>
+					</motion.div>
 
-					<div>
+					<motion.div
+						initial={{ opacity: 0, x: 50 }}
+						animate={
+							isVisible
+								? { opacity: 1, x: 0 }
+								: { opacity: 0, x: 50 }
+						}
+						transition={{ duration: 0.8, delay: 0.4 }}
+					>
 						<h3 className="text-2xl font-semibold mb-4">
 							Ingénieur full-stack & data scientist
 						</h3>
@@ -69,48 +129,90 @@ export default function About() {
 						</p>
 
 						<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-							<div>
+							<motion.div
+								initial={{ opacity: 0, y: 20 }}
+								animate={
+									isVisible
+										? { opacity: 1, y: 0 }
+										: { opacity: 0, y: 20 }
+								}
+								transition={{ duration: 0.6, delay: 0.6 }}
+							>
 								<h4 className="font-semibold mb-2">
 									Localisation
 								</h4>
 								<p className="text-muted-foreground">
 									Toulouse, France
 								</p>
-							</div>
+							</motion.div>
 
-							<div>
+							<motion.div
+								initial={{ opacity: 0, y: 20 }}
+								animate={
+									isVisible
+										? { opacity: 1, y: 0 }
+										: { opacity: 0, y: 20 }
+								}
+								transition={{ duration: 0.6, delay: 0.7 }}
+							>
 								<h4 className="font-semibold mb-2">Email</h4>
 								<p className="text-muted-foreground">
 									daponte.manoel@gmail.com
 								</p>
-							</div>
+							</motion.div>
 
-							<div>
+							<motion.div
+								initial={{ opacity: 0, y: 20 }}
+								animate={
+									isVisible
+										? { opacity: 1, y: 0 }
+										: { opacity: 0, y: 20 }
+								}
+								transition={{ duration: 0.6, delay: 0.8 }}
+							>
 								<h4 className="font-semibold mb-2">
 									Téléphone
 								</h4>
 								<p className="text-muted-foreground">
 									(+33) 6 82 69 71 32
 								</p>
-							</div>
+							</motion.div>
 
-							<div>
+							<motion.div
+								initial={{ opacity: 0, y: 20 }}
+								animate={
+									isVisible
+										? { opacity: 1, y: 0 }
+										: { opacity: 0, y: 20 }
+								}
+								transition={{ duration: 0.6, delay: 0.9 }}
+							>
 								<h4 className="font-semibold mb-2">Langues</h4>
 								<p className="text-muted-foreground">
 									Français (natif), Anglais (professionnel)
 								</p>
-							</div>
+							</motion.div>
 						</div>
 
-						<a
-							href="/resume_cv.pdf"
-							download
-							className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-md font-medium hover:bg-primary/90 transition-colors"
+						<motion.div
+							initial={{ opacity: 0, y: 20 }}
+							animate={
+								isVisible
+									? { opacity: 1, y: 0 }
+									: { opacity: 0, y: 20 }
+							}
+							transition={{ duration: 0.6, delay: 1 }}
+							whileHover={{ scale: 1.05 }}
+							whileTap={{ scale: 0.95 }}
 						>
-							<Download size={20} />
-							Télécharger mon CV
-						</a>
-					</div>
+							<Button asChild size="lg" className="gap-2">
+								<a href="/resume_cv.pdf" download>
+									<Download size={20} />
+									Télécharger mon CV
+								</a>
+							</Button>
+						</motion.div>
+					</motion.div>
 				</div>
 			</div>
 		</section>

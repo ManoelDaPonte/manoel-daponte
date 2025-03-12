@@ -5,7 +5,6 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-
 	/* Custom portfolio colors */
 	--primary: #3b82f6;
 	--primary-foreground: #ffffff;
@@ -94,7 +93,6 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-
 		/* Custom portfolio colors - dark mode */
 		--primary: #60a5fa;
 		--primary-foreground: #ffffff;
@@ -184,10 +182,10 @@ body {
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+	* {
+		@apply border-border outline-ring/50;
 	}
-  body {
-    @apply bg-background text-foreground;
+	body {
+		@apply bg-background text-foreground;
 	}
 }
