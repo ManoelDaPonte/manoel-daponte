@@ -5,14 +5,14 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-	/* Custom portfolio colors */
-	--primary: #3b82f6;
+	/* Custom portfolio colors - version améliorée */
+	--primary: #0048a5; /* Bleu plus profond au lieu de #3b82f6 */
 	--primary-foreground: #ffffff;
 
 	--secondary: #f3f4f6;
 	--secondary-foreground: #1f2937;
 
-	--accent: #0ea5e9;
+	--accent: #0d3e74; /* Bleu plus foncé au lieu de #0ea5e9 */
 	--accent-foreground: #ffffff;
 
 	--muted: #f3f4f6;
@@ -93,14 +93,14 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		/* Custom portfolio colors - dark mode */
-		--primary: #60a5fa;
+		/* Custom portfolio colors - dark mode - version améliorée */
+		--primary: #2563eb; /* Bleu plus profond au lieu de #60a5fa */
 		--primary-foreground: #ffffff;
 
 		--secondary: #1f2937;
 		--secondary-foreground: #f9fafb;
 
-		--accent: #38bdf8;
+		--accent: #1e40af; /* Bleu plus foncé au lieu de #38bdf8 */
 		--accent-foreground: #ffffff;
 
 		--muted: #1f2937;
@@ -113,7 +113,6 @@
 		--input: #374151;
 	}
 }
-
 body {
 	font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }

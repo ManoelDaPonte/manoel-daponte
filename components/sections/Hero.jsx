@@ -73,36 +73,51 @@ export default function Hero() {
 						animate={{ opacity: 1 }}
 						transition={{ delay: 1.2, duration: 0.8 }}
 					>
-						<Button asChild variant="linkedin" size="icon">
+						<motion.div
+							className="rounded-full p-2 border border-border bg-background hover:bg-primary hover:border-primary transition-colors duration-300"
+							whileHover={{ scale: 1.1 }}
+							whileTap={{ scale: 0.95 }}
+						>
 							<Link
 								href="https://linkedin.com/in/manoel-da-ponte-4092ab139"
 								target="_blank"
 								rel="noopener noreferrer"
 								aria-label="LinkedIn"
+								className="flex items-center justify-center w-10 h-10 text-foreground hover:text-white transition-colors duration-300"
 							>
 								<Linkedin size={20} />
 							</Link>
-						</Button>
+						</motion.div>
 
-						<Button asChild variant="github" size="icon">
+						<motion.div
+							className="rounded-full p-2 border border-border bg-background hover:bg-primary hover:border-primary transition-colors duration-300"
+							whileHover={{ scale: 1.1 }}
+							whileTap={{ scale: 0.95 }}
+						>
 							<Link
 								href="https://github.com/ManoelDaPonte"
 								target="_blank"
 								rel="noopener noreferrer"
 								aria-label="GitHub"
+								className="flex items-center justify-center w-10 h-10 text-foreground hover:text-white transition-colors duration-300"
 							>
 								<Github size={20} />
 							</Link>
-						</Button>
+						</motion.div>
 
-						<Button asChild variant="social" size="icon">
+						<motion.div
+							className="rounded-full p-2 border border-border bg-background hover:bg-primary hover:border-primary transition-colors duration-300"
+							whileHover={{ scale: 1.1 }}
+							whileTap={{ scale: 0.95 }}
+						>
 							<Link
 								href="mailto:daponte.manoel@gmail.com"
 								aria-label="Email"
+								className="flex items-center justify-center w-10 h-10 text-foreground hover:text-white transition-colors duration-300"
 							>
 								<Mail size={20} />
 							</Link>
-						</Button>
+						</motion.div>
 					</motion.div>
 				</div>
 			</div>

@@ -1,0 +1,120 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond avec un léger dégradé -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3f4f6" />
+      <stop offset="100%" stop-color="#e5e7eb" />
+    </linearGradient>
+    <linearGradient id="highlight-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#0048A5" stop-opacity="0.2" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fond principal -->
+  <rect width="800" height="600" fill="url(#bg-gradient)" />
+  
+  <!-- Grille avec des points pour représenter des clusters -->
+  <g opacity="0.4">
+    <g id="grid">
+      <line x1="0" y1="100" x2="800" y2="100" stroke="#ccc" stroke-width="1" />
+      <line x1="0" y1="200" x2="800" y2="200" stroke="#ccc" stroke-width="1" />
+      <line x1="0" y1="300" x2="800" y2="300" stroke="#ccc" stroke-width="1" />
+      <line x1="0" y1="400" x2="800" y2="400" stroke="#ccc" stroke-width="1" />
+      <line x1="0" y1="500" x2="800" y2="500" stroke="#ccc" stroke-width="1" />
+      
+      <line x1="100" y1="0" x2="100" y2="600" stroke="#ccc" stroke-width="1" />
+      <line x1="200" y1="0" x2="200" y2="600" stroke="#ccc" stroke-width="1" />
+      <line x1="300" y1="0" x2="300" y2="600" stroke="#ccc" stroke-width="1" />
+      <line x1="400" y1="0" x2="400" y2="600" stroke="#ccc" stroke-width="1" />
+      <line x1="500" y1="0" x2="500" y2="600" stroke="#ccc" stroke-width="1" />
+      <line x1="600" y1="0" x2="600" y2="600" stroke="#ccc" stroke-width="1" />
+      <line x1="700" y1="0" x2="700" y2="600" stroke="#ccc" stroke-width="1" />
+    </g>
+  </g>
+  
+  <!-- Région de mise en évidence pour le cluster 1 (femmes) -->
+  <ellipse cx="300" cy="250" rx="180" ry="130" fill="url(#highlight-gradient)" stroke="#2563eb" stroke-width="2" stroke-opacity="0.5" />
+  
+  <!-- Région de mise en évidence pour le cluster 2 (hommes) -->
+  <ellipse cx="550" cy="350" rx="180" ry="130" fill="url(#highlight-gradient)" stroke="#2563eb" stroke-width="2" stroke-opacity="0.5" />
+  
+  <!-- Cluster de points représentant des professions traditionnellement "féminines" -->
+  <g id="feminine-cluster">
+    <circle cx="240" cy="220" r="6" fill="#FF6B8B" />
+    <circle cx="260" cy="250" r="7" fill="#FF6B8B" />
+    <circle cx="280" cy="200" r="5" fill="#FF6B8B" />
+    <circle cx="300" cy="240" r="6" fill="#FF6B8B" />
+    <circle cx="320" cy="270" r="4" fill="#FF6B8B" />
+    <circle cx="340" cy="230" r="7" fill="#FF6B8B" />
+    <circle cx="230" cy="260" r="5" fill="#FF6B8B" />
+    <circle cx="270" cy="280" r="6" fill="#FF6B8B" />
+    <circle cx="310" cy="210" r="4" fill="#FF6B8B" />
+    <circle cx="330" cy="250" r="5" fill="#FF6B8B" />
+    <circle cx="290" cy="230" r="7" fill="#FF6B8B" />
+    <circle cx="250" cy="200" r="6" fill="#FF6B8B" />
+    <circle cx="270" cy="260" r="5" fill="#FF6B8B" />
+    <circle cx="310" cy="280" r="4" fill="#FF6B8B" />
+    <circle cx="350" cy="250" r="6" fill="#FF6B8B" />
+  </g>
+  
+  <!-- Cluster de points représentant des professions traditionnellement "masculines" -->
+  <g id="masculine-cluster">
+    <circle cx="490" cy="320" r="6" fill="#0048A5" />
+    <circle cx="510" cy="350" r="7" fill="#0048A5" />
+    <circle cx="530" cy="300" r="5" fill="#0048A5" />
+    <circle cx="550" cy="340" r="6" fill="#0048A5" />
+    <circle cx="570" cy="370" r="4" fill="#0048A5" />
+    <circle cx="590" cy="330" r="7" fill="#0048A5" />
+    <circle cx="480" cy="360" r="5" fill="#0048A5" />
+    <circle cx="520" cy="380" r="6" fill="#0048A5" />
+    <circle cx="560" cy="310" r="4" fill="#0048A5" />
+    <circle cx="580" cy="350" r="5" fill="#0048A5" />
+    <circle cx="540" cy="330" r="7" fill="#0048A5" />
+    <circle cx="500" cy="300" r="6" fill="#0048A5" />
+    <circle cx="520" cy="360" r="5" fill="#0048A5" />
+    <circle cx="560" cy="380" r="4" fill="#0048A5" />
+    <circle cx="600" cy="350" r="6" fill="#0048A5" />
+  </g>
+  
+  <!-- Points de transition (représentant la correction de biais) -->
+  <g id="transition-points">
+    <line x1="335" y1="260" x2="485" y2="335" stroke="#7C3AED" stroke-width="2" stroke-dasharray="5,5" />
+    <circle cx="410" cy="298" r="8" fill="#7C3AED" />
+    <circle cx="430" cy="310" r="6" fill="#7C3AED" />
+    <circle cx="390" cy="285" r="7" fill="#7C3AED" />
+  </g>
+  
+  <!-- Labels pour les clusters -->
+  <g id="labels" font-family="Arial, sans-serif" font-weight="bold">
+    <text x="300" y="170" text-anchor="middle" fill="#FF6B8B" font-size="16">Cluster 1</text>
+    <text x="550" y="270" text-anchor="middle" fill="#0048A5" font-size="16">Cluster 2</text>
+    <text x="420" y="340" text-anchor="middle" fill="#7C3AED" font-size="16">Correction de biais</text>
+  </g>
+  
+  <!-- Légende du modèle NLP -->
+  <g id="title-and-legend">
+    <rect x="260" y="50" width="280" height="50" rx="10" fill="white" stroke="#0048A5" stroke-width="2" />
+    <text x="400" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" fill="#0048A5" font-size="20">Classification NLP</text>
+    
+    <!-- Flux de mots stylisés pour représenter le NLP -->
+    <g id="word-flow" font-family="Arial, sans-serif" opacity="0.7">
+      <text x="100" y="460" font-size="12" fill="#555" transform="rotate(-10, 100, 460)">analyst</text>
+      <text x="150" y="490" font-size="14" fill="#555" transform="rotate(5, 150, 490)">developer</text>
+      <text x="220" y="470" font-size="11" fill="#555" transform="rotate(-5, 220, 470)">designer</text>
+      <text x="270" y="500" font-size="13" fill="#555" transform="rotate(8, 270, 500)">teacher</text>
+      <text x="340" y="480" font-size="12" fill="#555" transform="rotate(-8, 340, 480)">engineer</text>
+      <text x="400" y="510" font-size="15" fill="#555" transform="rotate(5, 400, 510)">manager</text>
+      <text x="470" y="470" font-size="11" fill="#555" transform="rotate(-6, 470, 470)">doctor</text>
+      <text x="520" y="500" font-size="13" fill="#555" transform="rotate(7, 520, 500)">nurse</text>
+      <text x="590" y="480" font-size="12" fill="#555" transform="rotate(-5, 590, 480)">technician</text>
+      <text x="650" y="495" font-size="14" fill="#555" transform="rotate(3, 650, 495)">scientist</text>
+    </g>
+  </g>
+  
+  <!-- Kaggle badge en bas à droite -->
+  <g id="kaggle-badge">
+    <rect x="610" y="520" width="150" height="50" rx="25" fill="white" stroke="#20BEFF" stroke-width="2" />
+    <text x="685" y="552" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" fill="#20BEFF" font-size="16">3ème place</text>
+  </g>
+</svg>

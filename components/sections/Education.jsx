@@ -1,3 +1,4 @@
+// Modifications pour components/sections/Education.jsx
 "use client";
 
 import { useState, useEffect } from "react";
@@ -127,22 +128,17 @@ export default function Education() {
 									whileHover={{ scale: 1.02, y: -5 }}
 									transition={{ duration: 0.2 }}
 								>
-									<Card className="overflow-hidden">
-										<CardContent className="p-0">
-											<div className="p-1 bg-primary">
-												{" "}
-											</div>
-											<div className="p-6">
-												<h4 className="text-lg font-bold">
-													{item.degree}
-												</h4>
-												<p className="text-primary mt-1">
-													{item.institution}
-												</p>
-												<div className="flex items-center gap-1 mt-2 text-muted-foreground">
-													<Calendar size={16} />
-													<span>{item.period}</span>
-												</div>
+									<Card className="overflow-hidden border-border hover:border-primary/50 transition-all duration-300">
+										<CardContent className="p-6">
+											<h4 className="text-lg font-bold">
+												{item.degree}
+											</h4>
+											<p className="text-primary mt-1">
+												{item.institution}
+											</p>
+											<div className="flex items-center gap-1 mt-2 text-muted-foreground">
+												<Calendar size={16} />
+												<span>{item.period}</span>
 											</div>
 										</CardContent>
 									</Card>
@@ -182,24 +178,17 @@ export default function Education() {
 									whileHover={{ scale: 1.02, y: -5 }}
 									transition={{ duration: 0.2 }}
 								>
-									<Card className="overflow-hidden">
-										<CardContent className="p-0">
-											<div className="p-1 bg-accent">
-												{" "}
-											</div>
-											<div className="p-6">
-												<h4 className="text-lg font-bold">
-													{item.name}
-												</h4>
-												<p className="text-primary mt-1">
-													{item.issuer}
-												</p>
-												<div className="flex items-center gap-1 mt-2 text-muted-foreground">
-													<Calendar size={16} />
-													<span>
-														Obtenu {item.date}
-													</span>
-												</div>
+									<Card className="overflow-hidden border-border hover:border-primary/50 transition-all duration-300">
+										<CardContent className="p-6">
+											<h4 className="text-lg font-bold">
+												{item.name}
+											</h4>
+											<p className="text-primary mt-1">
+												{item.issuer}
+											</p>
+											<div className="flex items-center gap-1 mt-2 text-muted-foreground">
+												<Calendar size={16} />
+												<span>Obtenu {item.date}</span>
 											</div>
 										</CardContent>
 									</Card>

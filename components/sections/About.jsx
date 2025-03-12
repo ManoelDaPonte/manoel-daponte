@@ -191,7 +191,7 @@ export default function About() {
 							whileTap={{ scale: 0.95 }}
 						>
 							<Button asChild size="lg" className="gap-2">
-								<a href="/resume_cv.pdf" download>
+								<a href="/cv-manoeldaponte.pdf" download>
 									<Download size={20} />
 									Télécharger mon CV
 								</a>

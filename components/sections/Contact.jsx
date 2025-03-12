@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -24,6 +24,7 @@ export default function Contact() {
 	});
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [submitted, setSubmitted] = useState(false);
+	const [error, setError] = useState("");
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -47,14 +48,32 @@ export default function Contact() {
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setFormState((prev) => ({ ...prev, [name]: value }));
+		// Réinitialiser les messages d'erreur lorsque l'utilisateur commence à taper
+		if (error) setError("");
 	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		setIsSubmitting(true);
+		setError(""); // Réinitialiser les erreurs précédentes
 
-		// Simulate form submission - in real app, replace with actual API call
-		setTimeout(() => {
+		try {
+			const response = await fetch("/api/contact", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(formState),
+			});
+
+			const data = await response.json();
+
+			if (!response.ok) {
+				throw new Error(
+					data.message ||
+						"Une erreur est survenue lors de l'envoi du message"
+				);
+			}
+
+			// Message envoyé avec succès
 			setIsSubmitting(false);
 			setSubmitted(true);
 			setFormState({
@@ -64,11 +83,18 @@ export default function Contact() {
 				message: "",
 			});
 
-			// Reset success message after 5 seconds
+			// Reset du message de succès après 5 secondes
 			setTimeout(() => {
 				setSubmitted(false);
 			}, 5000);
-		}, 1500);
+		} catch (error) {
+			console.error("Erreur lors de l'envoi du message:", error);
+			setIsSubmitting(false);
+			setError(
+				error.message ||
+					"Une erreur est survenue lors de l'envoi du message"
+			);
+		}
 	};
 
 	const contactInfo = [
@@ -87,8 +113,8 @@ export default function Contact() {
 		{
 			icon: <MapPin size={24} />,
 			title: "Adresse",
-			content: "390 route de Saint Simon, Toulouse, France",
-			link: "https://maps.google.com/?q=390+route+de+Saint+Simon,+Toulouse,+France",
+			content: "Route de Saint Simon, Toulouse, France",
+			link: "https://maps.google.com/?q=route+de+Saint+Simon,+Toulouse,+France",
 		},
 	];
 
@@ -149,21 +175,18 @@ export default function Contact() {
 								whileHover={{ scale: 1.03, x: 5 }}
 								transition={{ duration: 0.2 }}
 							>
-								<Card className="border-border hover:border-primary transition-colors overflow-hidden">
-									<CardContent className="p-0">
-										<div className="p-1 bg-primary"></div>
-										<div className="p-6 flex items-start gap-4">
-											<div className="text-primary">
-												{item.icon}
-											</div>
-											<div>
-												<h3 className="font-semibold mb-1">
-													{item.title}
-												</h3>
-												<p className="text-muted-foreground">
-													{item.content}
-												</p>
-											</div>
+								<Card className="border-border hover:border-primary/50 transition-colors overflow-hidden mb-4">
+									<CardContent className="p-6 flex items-start gap-4">
+										<div className="text-primary">
+											{item.icon}
+										</div>
+										<div>
+											<h3 className="font-semibold mb-1">
+												{item.title}
+											</h3>
+											<p className="text-muted-foreground">
+												{item.content}
+											</p>
 										</div>
 									</CardContent>
 								</Card>
@@ -203,6 +226,25 @@ export default function Contact() {
 									</motion.div>
 								) : (
 									<form onSubmit={handleSubmit}>
+										{error && (
+											<motion.div
+												className="flex items-start gap-2 mb-4 p-4 bg-destructive/10 border border-destructive text-destructive rounded-md"
+												initial={{ opacity: 0, y: -10 }}
+												animate={{ opacity: 1, y: 0 }}
+											>
+												<AlertTriangle
+													size={20}
+													className="flex-shrink-0 mt-0.5"
+												/>
+												<div>
+													<p className="font-medium">
+														Erreur
+													</p>
+													<p>{error}</p>
+												</div>
+											</motion.div>
+										)}
+
 										<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
 											<div className="space-y-2">
 												<label
