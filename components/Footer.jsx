@@ -82,7 +82,7 @@ export default function Footer() {
 							</li>
 							<li className="flex items-center gap-2">
 								<Link
-									href="https://github.com/yourusername"
+									href="https://github.com/ManoelDaPonte"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"

@@ -38,7 +38,7 @@ export default function Footer() {
 		{
 			label: "GitHub",
 			icon: <Github size={16} />,
-			href: "https://github.com/yourusername",
+			href: "https://github.com/ManoelDaPonte",
 		},
 	];
 

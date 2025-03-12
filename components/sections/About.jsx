@@ -5,22 +5,6 @@ import { Download } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { IconCloud } from "@/components/magicui/icon-cloud";
-import {
-	Code,
-	Server,
-	Database,
-	LineChart,
-	Cpu,
-	Globe,
-	Cloud,
-	Layout,
-	BrainCircuit,
-	Laptop,
-	GitBranch,
-	PackageOpen,
-	Layers,
-	Workflow,
-} from "lucide-react";
 
 export default function About() {
 	const [isVisible, setIsVisible] = useState(false);
@@ -44,22 +28,33 @@ export default function About() {
 		};
 	}, []);
 
-	const techIcons = [
-		<Code size={40} />,
-		<Server size={40} />,
-		<Database size={40} />,
-		<LineChart size={40} />,
-		<Cpu size={40} />,
-		<Globe size={40} />,
-		<Cloud size={40} />,
-		<Layout size={40} />,
-		<BrainCircuit size={40} />,
-		<Laptop size={40} />,
-		<GitBranch size={40} />,
-		<PackageOpen size={40} />,
-		<Layers size={40} />,
-		<Workflow size={40} />,
+	// Définition des slugs pour les technologies mentionnées dans votre CV
+	const slugs = [
+		"python",
+		"javascript",
+		"react",
+		"nextdotjs",
+		"nodedotjs",
+		"tailwindcss",
+		"csharp",
+		"fastapi",
+		"postgresql",
+		"mongodb",
+		"neo4j",
+		"docker",
+		"amazonaws",
+		"microsoftazure",
+		"vercel",
+		"unity",
+		"html5",
+		"css3",
+		"openai",
+		"ubuntu",
+		"prisma",
 	];
+
+	// Création des URLs pour les images
+	const images = slugs.map((slug) => `https://cdn.simpleicons.org/${slug}`);
 
 	return (
 		<section id="about" className="py-20 bg-secondary">
@@ -78,7 +73,7 @@ export default function About() {
 
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 					<motion.div
-						className="relative rounded-xl overflow-hidden bg-secondary/50 border border-border p-4"
+						className="relative rounded-xl overflow-hidden h-[400px] flex items-center justify-center"
 						initial={{ opacity: 0, x: -50 }}
 						animate={
 							isVisible
@@ -87,17 +82,7 @@ export default function About() {
 						}
 						transition={{ duration: 0.8, delay: 0.2 }}
 					>
-						<IconCloud icons={techIcons} />
-						<motion.p
-							className="text-center text-sm mt-4 text-muted-foreground"
-							initial={{ opacity: 0 }}
-							animate={
-								isVisible ? { opacity: 1 } : { opacity: 0 }
-							}
-							transition={{ duration: 0.8, delay: 1 }}
-						>
-							Mes technologies et compétences
-						</motion.p>
+						<IconCloud images={images} />
 					</motion.div>
 
 					<motion.div

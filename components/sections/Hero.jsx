@@ -86,7 +86,7 @@ export default function Hero() {
 
 						<Button asChild variant="github" size="icon">
 							<Link
-								href="https://github.com/yourusername"
+								href="https://github.com/ManoelDaPonte"
 								target="_blank"
 								rel="noopener noreferrer"
 								aria-label="GitHub"
