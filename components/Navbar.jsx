@@ -24,11 +24,11 @@ export default function Navbar() {
 	};
 
 	const sections = [
-		{ name: "About", href: "#about" },
-		{ name: "Skills", href: "#skills" },
-		{ name: "Experience", href: "#experience" },
-		{ name: "Projects", href: "#projects" },
-		{ name: "Education", href: "#education" },
+		{ name: "A Propos", href: "#about" },
+		{ name: "Projets", href: "#projects" },
+		{ name: "Compétences", href: "#skills" },
+		{ name: "Expériences", href: "#experience" },
+		{ name: "Diplômes", href: "#education" },
 		{ name: "Contact", href: "#contact" },
 	];
 

@@ -13,8 +13,8 @@ export default function Footer() {
 							Manoel Da Ponte
 						</h3>
 						<p className="text-muted-foreground mb-4">
-							Full Stack Engineer & Data Scientist based in
-							Toulouse, France.
+							Full Stack Engineer & Data Scientist à Toulouse,
+							France.
 						</p>
 					</div>
 
@@ -28,7 +28,7 @@ export default function Footer() {
 									href="#about"
 									className="text-muted-foreground hover:text-foreground transition-colors"
 								>
-									About
+									A propos
 								</Link>
 							</li>
 							<li>
@@ -36,7 +36,7 @@ export default function Footer() {
 									href="#experience"
 									className="text-muted-foreground hover:text-foreground transition-colors"
 								>
-									Experience
+									Expérience
 								</Link>
 							</li>
 							<li>
@@ -44,7 +44,7 @@ export default function Footer() {
 									href="#projects"
 									className="text-muted-foreground hover:text-foreground transition-colors"
 								>
-									Projects
+									Projets
 								</Link>
 							</li>
 							<li>
@@ -97,7 +97,7 @@ export default function Footer() {
 
 				<div className="mt-8 pt-8 border-t border-border">
 					<p className="text-center text-muted-foreground">
-						© {currentYear} Manoel Da Ponte. All rights reserved.
+						© {currentYear} Manoel Da Ponte.
 					</p>
 				</div>
 			</div>

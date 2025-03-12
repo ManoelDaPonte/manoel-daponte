@@ -59,7 +59,7 @@ export default function Experience() {
 				"React/Next.js, Node.js, PostgreSQL, Prisma, OpenAI API, Vercel",
 		},
 		{
-			title: "Data Scientist",
+			title: "Data Engineer",
 			company: "TotalEnergies",
 			location: "Esbjerg, Danemark",
 			period: "Mars 2022 - Février 2024",

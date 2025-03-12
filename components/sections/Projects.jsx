@@ -157,9 +157,7 @@ export default function Projects() {
 					}
 					transition={{ duration: 0.6 }}
 				>
-					<h2 className="text-3xl font-bold mb-4">
-						Projets Significatifs
-					</h2>
+					<h2 className="text-3xl font-bold mb-4">Projets</h2>
 					<div className="h-1 w-20 bg-primary mx-auto"></div>
 					<p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
 						Une sélection de projets personnels et professionnels
