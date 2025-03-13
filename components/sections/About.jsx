@@ -180,6 +180,7 @@ export default function About() {
 						</div>
 
 						<motion.div
+							className="flex flex-col sm:flex-row gap-4"
 							initial={{ opacity: 0, y: 20 }}
 							animate={
 								isVisible
@@ -187,15 +188,47 @@ export default function About() {
 									: { opacity: 0, y: 20 }
 							}
 							transition={{ duration: 0.6, delay: 1 }}
-							whileHover={{ scale: 1.05 }}
-							whileTap={{ scale: 0.95 }}
 						>
-							<Button asChild size="lg" className="gap-2">
-								<a href="/cv-manoeldaponte.pdf" download>
-									<Download size={20} />
-									Télécharger mon CV
-								</a>
-							</Button>
+							<motion.div
+								whileHover={{ scale: 1.05 }}
+								whileTap={{ scale: 0.95 }}
+							>
+								<Button
+									asChild
+									size="lg"
+									className="gap-2 w-full sm:w-auto"
+								>
+									<a
+										href="https://github.com/ManoelDaPonte/CVs/raw/main/resume_cv_onepage.pdf"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<Download size={20} />
+										CV (version courte)
+									</a>
+								</Button>
+							</motion.div>
+
+							<motion.div
+								whileHover={{ scale: 1.05 }}
+								whileTap={{ scale: 0.95 }}
+							>
+								<Button
+									asChild
+									size="lg"
+									variant="outline"
+									className="gap-2 w-full sm:w-auto"
+								>
+									<a
+										href="https://github.com/ManoelDaPonte/CVs/raw/main/resume_cv.pdf"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<Download size={20} />
+										CV (version détaillée)
+									</a>
+								</Button>
+							</motion.div>
 						</motion.div>
 					</motion.div>
 				</div>

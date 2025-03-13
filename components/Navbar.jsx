@@ -2,26 +2,20 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { useTheme } from "next-themes";
 
 export default function Navbar() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const { theme, setTheme } = useTheme();
 	const [mounted, setMounted] = useState(false);
 
-	// Après le montage du composant, on peut accéder au thème
+	// Après le montage du composant
 	useEffect(() => {
 		setMounted(true);
 	}, []);
 
 	const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
-	const toggleTheme = () => {
-		setTheme(theme === "dark" ? "light" : "dark");
-	};
 
 	const sections = [
 		{ name: "A Propos", href: "#about" },
@@ -75,43 +69,10 @@ export default function Navbar() {
 									</Link>
 								</motion.div>
 							))}
-
-							<motion.div
-								initial={{ opacity: 0, rotate: -90 }}
-								animate={{ opacity: 1, rotate: 0 }}
-								transition={{ delay: 0.6, duration: 0.5 }}
-							>
-								<Button
-									variant="ghost"
-									size="icon"
-									onClick={toggleTheme}
-									aria-label="Toggle theme"
-								>
-									{mounted && theme === "dark" ? (
-										<Sun size={18} />
-									) : (
-										<Moon size={18} />
-									)}
-								</Button>
-							</motion.div>
 						</div>
 					</div>
 
 					<div className="md:hidden flex items-center">
-						<Button
-							variant="ghost"
-							size="icon"
-							onClick={toggleTheme}
-							className="mr-2"
-							aria-label="Toggle theme"
-						>
-							{mounted && theme === "dark" ? (
-								<Sun size={18} />
-							) : (
-								<Moon size={18} />
-							)}
-						</Button>
-
 						<Button
 							variant="ghost"
 							size="icon"
