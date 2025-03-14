@@ -95,7 +95,7 @@ export default function Projects() {
 			technologies: ["Python", "Node.js", "Next.js", "API Twitch", "NLP"],
 			year: "2023",
 			location: "Projet Open Source",
-			link: "https://twitch-moderation-front-rlrtb9p1u-manoeldapontes-projects.vercel.app/",
+			link: "https://twitch-moderation-front.vercel.app/",
 			githubLink:
 				"https://github.com/ManoelDaPonte/twitch-moderation-front",
 			image: "/images/twitch-moderation.png",
