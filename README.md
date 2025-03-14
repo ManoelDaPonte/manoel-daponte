@@ -2,7 +2,7 @@
 
 Un portfolio moderne pour un Full Stack Engineer &amp; Data Scientist, construit avec Next.js, Tailwind CSS et shadcn/ui.
 
-![Capture d'écran du portfolio](public/screenshot.png)
+![Capture d'écran du portfolio](public/images/screenshot.png)
 
 ## 🚀 Caractéristiques
 
