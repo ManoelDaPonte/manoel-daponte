@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, Github, Calendar, MapPin } from "lucide-react";
+import { ExternalLink, Github, Calendar, MapPin, Activity } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
@@ -56,6 +56,7 @@ export default function Projects() {
 			githubLink: null,
 			isFounder: true,
 			image: "/images/wisetwin.png",
+			status: "active",
 		},
 		{
 			title: "Bootstrap-Now",
@@ -76,6 +77,7 @@ export default function Projects() {
 			githubLink: null,
 			isFounder: true,
 			image: "/images/bootstrap-now.png",
+			status: "active",
 		},
 		{
 			title: "Outils de Transcription Audio",
@@ -205,6 +207,14 @@ export default function Projects() {
 
 									{/* Overlay semi-transparent en bas de l'image pour améliorer la lisibilité */}
 									<div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-black/30 to-transparent"></div>
+
+									{/* Indicateur de statut actif */}
+									{project.status === "active" && (
+										<div className="absolute top-3 right-3 bg-emerald-500 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1 shadow-lg animate-pulse">
+											<Activity size={12} />
+											<span>Actif</span>
+										</div>
+									)}
 								</div>
 
 								<CardHeader className="pt-5">
@@ -254,21 +264,32 @@ export default function Projects() {
 
 								<CardFooter className="flex justify-between pt-4 border-t border-border">
 									{project.link ? (
-										<Button
-											asChild
-											variant="outline"
-											size="sm"
-											className="gap-1"
-										>
-											<Link
-												href={project.link}
-												target="_blank"
-												rel="noopener noreferrer"
+										<div className="flex items-center gap-2">
+											<Button
+												asChild
+												variant="outline"
+												size="sm"
+												className="gap-1"
 											>
-												<ExternalLink size={14} />
-												<span>Voir le projet</span>
-											</Link>
-										</Button>
+												<Link
+													href={project.link}
+													target="_blank"
+													rel="noopener noreferrer"
+												>
+													<ExternalLink size={14} />
+													<span>Voir le projet</span>
+												</Link>
+											</Button>
+
+											{project.status === "active" && (
+												<div className="flex items-center text-emerald-500">
+													<Activity
+														size={18}
+														className="animate-pulse"
+													/>
+												</div>
+											)}
+										</div>
 									) : (
 										<div></div>
 									)}
