@@ -1,4 +1,3 @@
-// Modifications pour components/sections/Education.jsx
 "use client";
 
 import { useState, useEffect } from "react";
@@ -30,21 +29,27 @@ export default function Education() {
 
 	const educations = [
 		{
-			degree: "Master, Statistique et Informatique Décisionnelle",
+			degree: "Master Science et Ingénierie des Données",
 			institution: "Université Paul Sabatier Toulouse III",
 			period: "2019 - 2021",
+			description:
+				"Formation approfondie en data engineering couvrant la collecte, le stockage et l'analyse statistique des données massives.",
 			type: "education",
 		},
 		{
-			degree: "Licence, Mathématiques Appliquées aux Sciences Humaines et Sociales",
+			degree: "Licence MIASHS parcours Mathématiques",
 			institution: "Université Jean Jaurès Toulouse II",
 			period: "2018 - 2019",
+			description:
+				"Formation pluridisciplinaire associant mathématiques appliquées, informatique et sciences humaines et sociales.",
 			type: "education",
 		},
 		{
-			degree: "DUT, Statistique et Informatique Décisionnelle",
+			degree: "DUT Statistique et Informatique Décisionnelle",
 			institution: "Université de Caen",
 			period: "2016 - 2018",
+			description:
+				"Formation en statistique et informatique pour l'analyse et la modélisation des données d'aide à la décision.",
 			type: "education",
 		},
 	];
@@ -54,6 +59,7 @@ export default function Education() {
 			name: "Azure Data Engineer Associate",
 			issuer: "Microsoft",
 			date: "2025",
+			id: "DP-203",
 			type: "certification",
 		},
 	];
@@ -140,6 +146,9 @@ export default function Education() {
 												<Calendar size={16} />
 												<span>{item.period}</span>
 											</div>
+											<p className="mt-3 text-muted-foreground text-sm">
+												{item.description}
+											</p>
 										</CardContent>
 									</Card>
 								</motion.div>
@@ -184,7 +193,7 @@ export default function Education() {
 												{item.name}
 											</h4>
 											<p className="text-primary mt-1">
-												{item.issuer}
+												{item.issuer} ({item.id})
 											</p>
 											<div className="flex items-center gap-1 mt-2 text-muted-foreground">
 												<Calendar size={16} />

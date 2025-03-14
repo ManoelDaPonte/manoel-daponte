@@ -98,13 +98,6 @@ export default function About() {
 							Ingénieur full-stack & data scientist
 						</h3>
 
-						<p className="mb-4 text-muted-foreground">
-							Spécialisé dans l'ingénierie de données et le
-							développement full-stack, je conçois des solutions
-							analytiques innovantes avec une approche orientée
-							résultats et business value.
-						</p>
-
 						<p className="mb-6 text-muted-foreground">
 							Avec une expérience internationale et une expertise
 							technique solide, je peux développer des solutions
@@ -174,7 +167,7 @@ export default function About() {
 							>
 								<h4 className="font-semibold mb-2">Langues</h4>
 								<p className="text-muted-foreground">
-									Français (natif), Anglais (professionnel)
+									Français (natif), Anglais (C1)
 								</p>
 							</motion.div>
 						</div>
