@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#150f24"/>
+      <stop offset="1" stop-color="#2b1d4d"/>
+    </linearGradient>
+    <radialGradient id="splat" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#b18cff" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#b18cff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="splat2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6fa8ff" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#6fa8ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="splat3" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ff9ec6" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#ff9ec6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- nuage de gaussiennes formant une structure -->
+  <g>
+    <ellipse cx="330" cy="200" rx="46" ry="22" fill="url(#splat)" transform="rotate(-18 330 200)"/>
+    <ellipse cx="390" cy="170" rx="38" ry="18" fill="url(#splat2)" transform="rotate(12 390 170)"/>
+    <ellipse cx="440" cy="210" rx="52" ry="20" fill="url(#splat)" transform="rotate(-8 440 210)"/>
+    <ellipse cx="360" cy="245" rx="42" ry="16" fill="url(#splat3)" transform="rotate(20 360 245)"/>
+    <ellipse cx="470" cy="160" rx="30" ry="14" fill="url(#splat3)" transform="rotate(-25 470 160)"/>
+    <ellipse cx="300" cy="150" rx="26" ry="12" fill="url(#splat2)" transform="rotate(30 300 150)"/>
+    <ellipse cx="510" cy="240" rx="36" ry="15" fill="url(#splat2)" transform="rotate(15 510 240)"/>
+    <ellipse cx="280" cy="255" rx="28" ry="12" fill="url(#splat)" transform="rotate(-30 280 255)"/>
+    <ellipse cx="420" cy="130" rx="22" ry="10" fill="url(#splat)" transform="rotate(8 420 130)"/>
+    <ellipse cx="545" cy="185" rx="24" ry="11" fill="url(#splat3)" transform="rotate(-12 545 185)"/>
+  </g>
+  <!-- rectangle de sélection -->
+  <rect x="255" y="120" width="220" height="150" fill="none" stroke="#ffd166" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <circle cx="255" cy="120" r="4" fill="#ffd166"/>
+  <circle cx="475" cy="120" r="4" fill="#ffd166"/>
+  <circle cx="255" cy="270" r="4" fill="#ffd166"/>
+  <circle cx="475" cy="270" r="4" fill="#ffd166"/>
+  <!-- hotspot pédagogique -->
+  <g transform="translate(600,140)">
+    <circle r="16" fill="none" stroke="#7fe0a7" stroke-width="2"/>
+    <circle r="6" fill="#7fe0a7"/>
+    <line x1="16" y1="0" x2="52" y2="0" stroke="#7fe0a7" stroke-width="1.5"/>
+    <rect x="52" y="-16" width="110" height="34" rx="8" fill="#1e3328" stroke="#7fe0a7" stroke-width="1"/>
+    <rect x="64" y="-6" width="86" height="6" rx="3" fill="#7fe0a7" opacity="0.7"/>
+    <rect x="64" y="4" width="58" height="6" rx="3" fill="#7fe0a7" opacity="0.4"/>
+  </g>
+  <!-- gizmo -->
+  <g transform="translate(150,330)" stroke-width="2.5">
+    <line x1="0" y1="0" x2="42" y2="0" stroke="#ff6b6b"/>
+    <line x1="0" y1="0" x2="0" y2="-42" stroke="#7fe0a7"/>
+    <line x1="0" y1="0" x2="-26" y2="22" stroke="#6fa8ff"/>
+    <circle r="4" fill="#ffffff"/>
+  </g>
+  <text x="80" y="392" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#f0e9ff">Splat Editor &#8212; SafetyTour</text>
+  <text x="80" y="420" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a68fd8">Gaussian Splatting &#183; visites de pr&#233;vention interactives</text>
+</svg>

@@ -37,7 +37,7 @@ export default function Hero() {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ delay: 0.3, duration: 0.8 }}
 					>
-						Full Stack Engineer & Data Scientist
+						AI Engineer & Full Stack Developer
 					</motion.h2>
 
 					<motion.p
@@ -46,10 +46,10 @@ export default function Hero() {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ delay: 0.6, duration: 0.8 }}
 					>
-						Spécialisé dans l'ingénierie de données et le
-						développement full-stack, je conçois des solutions
-						analytiques innovantes avec une approche orientée
-						résultats et business value.
+						Je construis des produits IA de bout en bout — agents
+						LLM, RAG, pipelines de données — et les plateformes
+						SaaS qui les portent en production. Cofondateur de
+						WiseTwin, basé en Suisse romande.
 					</motion.p>
 
 					<motion.div

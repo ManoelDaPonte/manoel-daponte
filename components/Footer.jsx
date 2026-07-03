@@ -13,8 +13,8 @@ export default function Footer() {
 							Manoel Da Ponte
 						</h3>
 						<p className="text-muted-foreground mb-4">
-							Full Stack Engineer & Data Scientist à Toulouse,
-							France.
+							AI Engineer & Full Stack Developer en Suisse
+							romande.
 						</p>
 					</div>
 

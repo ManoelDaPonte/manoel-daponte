@@ -30,18 +30,18 @@ export default function Experience() {
 	const experiences = [
 		{
 			title: "Cofondateur & Lead Developer",
-			company: "Wise Twin",
-			location: "Toulouse, France",
+			company: "WiseTwin",
+			location: "Toulouse, France · Remote",
 			period: "Mars 2024 - Présent",
 			description: [
-				"Direction complète du développement technique d'une plateforme SaaS de formation 3D immersive pour techniciens industriels.",
-				"Conception et implémentation d'une architecture intégrant des builds Unity dans un environnement web React.",
-				"Développement d'environnements 3D pour former des techniciens sur des installations sensibles comme des centrales électriques.",
-				"Création d'une infrastructure de base de données optimisée pour l'analyse en temps réel des performances des utilisateurs.",
-				"Mise en place d'un pipeline CI/CD pour automatiser les déploiements et maintenir une qualité de code élevée.",
+				"Architecture et développement du SaaS multitenant de formation à la sécurité industrielle (WiseTrainer 3D, WisePaper, SafetyTour) : ~80 000 lignes de TypeScript, 124 routes API, SSO d'entreprise, MFA, exports de conformité xAPI/cmi5 et Qualiopi.",
+				"Conception d'un copilote IA HSE : agent LLM (Claude) à 12 outils avec boucle agentique développée sans framework, RAG pgvector sur 62 726 accidents industriels (base ARIA), streaming SSE, analyse multimodale de photos de chantier.",
+				"Pipeline de génération de formations depuis PowerPoint : transcription Whisper, plan validé par l'humain, rédaction multimodale par LLM et vérification des QCM par un second modèle (LLM-as-judge).",
+				"Développement d'éditeurs 3D web en production : Gaussian Splatting (PlayCanvas, shaders GLSL de sélection GPU) et cartes 3D photoréalistes WiseAtlas (Google Maps 3D, modèles GLB géolocalisés).",
+				"Infrastructure cloud : Azure Container Apps + Container Registry avec CI/CD GitHub Actions, Vercel, Neon PostgreSQL ; isolation multi-tenant testée en CI ; gouvernance des coûts IA par organisation (budgets, quotas, suivi par token).",
 			],
 			technologies:
-				"React/Next.js, Python, Node.js, Unity, Azure, Ubuntu Server, PostgreSQL, ThingsBoard, Node.js",
+				"Next.js, React, TypeScript, Python, FastAPI, Claude (Anthropic), OpenAI, pgvector, PostgreSQL, Prisma, Azure, Docker, GitHub Actions, PlayCanvas, Unity, Vercel",
 		},
 		{
 			title: "Cofondateur & Lead Developer",

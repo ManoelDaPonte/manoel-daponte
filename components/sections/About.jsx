@@ -31,26 +31,27 @@ export default function About() {
 	// Définition des slugs pour les technologies mentionnées dans votre CV
 	const slugs = [
 		"python",
+		"typescript",
 		"javascript",
 		"react",
 		"nextdotjs",
 		"nodedotjs",
 		"tailwindcss",
-		"csharp",
 		"fastapi",
 		"postgresql",
-		"mongodb",
-		"neo4j",
+		"anthropic",
+		"openai",
 		"docker",
+		"githubactions",
 		"amazonaws",
 		"microsoftazure",
 		"vercel",
 		"unity",
-		"html5",
-		"css3",
-		"openai",
-		"ubuntu",
+		"playcanvas",
+		"googlemaps",
 		"prisma",
+		"mongodb",
+		"ubuntu",
 	];
 
 	// Création des URLs pour les images
@@ -95,15 +96,18 @@ export default function About() {
 						transition={{ duration: 0.8, delay: 0.4 }}
 					>
 						<h3 className="text-2xl font-semibold mb-4">
-							Ingénieur full-stack & data scientist
+							AI Engineer & développeur full-stack
 						</h3>
 
 						<p className="mb-6 text-muted-foreground">
-							Avec une expérience internationale et une expertise
-							technique solide, je peux développer des solutions
-							end-to-end répondant précisément aux besoins
-							métiers, avec une appétence particulière pour les
-							environnements dynamiques et innovants.
+							Cofondateur de WiseTwin, j'ai conçu et développé
+							des produits IA en production : agents LLM avec
+							outils, RAG sur des dizaines de milliers de
+							documents, pipelines de génération de contenu
+							multimodaux — ainsi que le SaaS multitenant et
+							l'infrastructure cloud qui les portent. Parcours
+							international : France, Danemark, et aujourd'hui
+							la Suisse.
 						</p>
 
 						<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -120,7 +124,7 @@ export default function About() {
 									Localisation
 								</h4>
 								<p className="text-muted-foreground">
-									Toulouse, France
+									Grandvaux (Vaud), Suisse
 								</p>
 							</motion.div>
 

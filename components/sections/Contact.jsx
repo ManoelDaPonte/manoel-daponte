@@ -113,8 +113,8 @@ export default function Contact() {
 		{
 			icon: <MapPin size={24} />,
 			title: "Adresse",
-			content: "Route de Saint Simon, Toulouse, France",
-			link: "https://maps.google.com/?q=route+de+Saint+Simon,+Toulouse,+France",
+			content: "Grandvaux (Vaud), Suisse",
+			link: "https://maps.google.com/?q=Grandvaux,+Suisse",
 		},
 	];
 

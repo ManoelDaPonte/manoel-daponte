@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Manoel Da Ponte | Full Stack Engineer & Data Scientist",
-  description: "Portfolio professionnel de Manoel Da Ponte, Full Stack Engineer et Data Scientist basé à Toulouse, France.",
+  title: "Manoel Da Ponte | AI Engineer & Full Stack Developer",
+  description: "Portfolio professionnel de Manoel Da Ponte, AI Engineer et développeur full-stack basé en Suisse romande. Agents LLM, RAG, data engineering et SaaS en production.",
 };
 
 export default function RootLayout({ children }) {
