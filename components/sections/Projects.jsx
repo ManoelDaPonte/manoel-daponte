@@ -38,7 +38,7 @@ export default function Projects() {
 
 	const projects = [
 		{
-			title: "WiseTwin — SaaS de formation industrielle",
+			title: "WiseTwin - SaaS de formation industrielle",
 			description:
 				"Plateforme SaaS multitenant de formation à la sécurité industrielle regroupant trois produits (3D immersive, documentaire, visites de prévention). ~80 000 lignes de TypeScript, 124 routes API, SSO d'entreprise, MFA, exports de conformité xAPI/cmi5 et Qualiopi, isolation des données par organisation jusqu'au stockage.",
 			technologies: [
@@ -73,14 +73,14 @@ export default function Projects() {
 			],
 			year: "2025 - 2026",
 			location: "WiseTwin",
-			link: null,
+			link: "https://app.wisetwin.eu/",
 			githubLink: null,
 			isFounder: true,
 			image: "/images/wisetwin-ai.svg",
 			status: "active",
 		},
 		{
-			title: "WiseAtlas — Cartes 3D interactives",
+			title: "WiseAtlas - Cartes 3D interactives",
 			description:
 				"Éditeur SaaS multitenant de cartes de territoire : cartographie 3D photoréaliste (Google Maps 3D), modèles 3D géolocalisés, points d'intérêt, réseaux et zones, storytelling par timeline et blocs de contenu riches avec graphiques. Traduction multilingue par LLM intégrée, avec suivi des coûts.",
 			technologies: [
@@ -101,7 +101,7 @@ export default function Projects() {
 			status: "active",
 		},
 		{
-			title: "Splat Editor — SafetyTour",
+			title: "Splat Editor - SafetyTour",
 			description:
 				"Éditeur web de Gaussian Splats 3D : numérisation photoréaliste de sites industriels réels, nettoyage de scène avec sélection GPU (shaders GLSL custom), hotspots pédagogiques avec quiz, visites guidées scénarisées et export HTML autonome. Analytics de progression des apprenants remontées au SaaS.",
 			technologies: [
@@ -136,11 +136,10 @@ export default function Projects() {
 			],
 			year: "2024",
 			location: "Toulouse, France",
-			link: "https://www.bootstrap-now.com/",
+			link: null,
 			githubLink: null,
 			isFounder: true,
 			image: "/images/bootstrap-now.png",
-			status: "active",
 		},
 		{
 			title: "Outils de Transcription Audio",
@@ -191,6 +190,7 @@ export default function Projects() {
 			link: null,
 			githubLink: null,
 			image: "/images/nlp-classification.svg",
+			footerNote: "Le dépôt de ce projet n'a pas été conservé.",
 		},
 	];
 
@@ -247,7 +247,7 @@ export default function Projects() {
 							}}
 							transition={{ duration: 0.2 }}
 						>
-							<Card className="h-full flex flex-col overflow-hidden border-border hover:border-primary/50 transition-all duration-300">
+							<Card className="h-full flex flex-col overflow-hidden pt-0 gap-4 border-border hover:border-primary/50 transition-all duration-300">
 								{/* Image container avec bordure inférieure */}
 								<div className="relative h-56 overflow-hidden border-b border-border">
 									{project.image ? (
@@ -280,7 +280,7 @@ export default function Projects() {
 									)}
 								</div>
 
-								<CardHeader className="pt-5">
+								<CardHeader>
 									<CardTitle className="flex items-center gap-2 text-lg">
 										{project.title}
 										{project.isFounder && (
@@ -326,6 +326,12 @@ export default function Projects() {
 								</CardContent>
 
 								<CardFooter className="flex justify-between pt-4 border-t border-border">
+									{!project.link && !project.githubLink && (
+										<p className="text-sm text-muted-foreground italic">
+											{project.footerNote ||
+												"Projet privé : contactez-moi pour une présentation détaillée."}
+										</p>
+									)}
 									{project.link ? (
 										<div className="flex items-center gap-2">
 											<Button

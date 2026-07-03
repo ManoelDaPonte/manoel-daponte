@@ -104,7 +104,7 @@ export default function About() {
 							des produits IA en production : agents LLM avec
 							outils, RAG sur des dizaines de milliers de
 							documents, pipelines de génération de contenu
-							multimodaux — ainsi que le SaaS multitenant et
+							multimodaux, ainsi que le SaaS multitenant et
 							l'infrastructure cloud qui les portent. Parcours
 							international : France, Danemark, et aujourd'hui
 							la Suisse.

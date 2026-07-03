@@ -31,7 +31,7 @@ export default function Experience() {
 		{
 			title: "Cofondateur & Lead Developer",
 			company: "WiseTwin",
-			location: "Toulouse, France · Remote",
+			location: "Dunkerque, France (remote)",
 			period: "Mars 2024 - Présent",
 			description: [
 				"Architecture et développement du SaaS multitenant de formation à la sécurité industrielle (WiseTrainer 3D, WisePaper, SafetyTour) : ~80 000 lignes de TypeScript, 124 routes API, SSO d'entreprise, MFA, exports de conformité xAPI/cmi5 et Qualiopi.",
@@ -122,8 +122,8 @@ export default function Experience() {
 					</h2>
 					<div className="h-1 w-20 bg-primary mx-auto"></div>
 					<p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-						Mon parcours professionnel en tant qu'ingénieur
-						full-stack et data scientist.
+						Mon parcours, de la data science à l'ingénierie IA
+						et au développement de produits SaaS.
 					</p>
 				</motion.div>
 

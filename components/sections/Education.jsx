@@ -60,6 +60,7 @@ export default function Education() {
 			issuer: "Microsoft",
 			date: "2025",
 			id: "DP-203",
+			note: "Certification arrivée à expiration, non renouvelée à ce jour.",
 			type: "certification",
 		},
 	];
@@ -199,6 +200,11 @@ export default function Education() {
 												<Calendar size={16} />
 												<span>Obtenu {item.date}</span>
 											</div>
+											{item.note && (
+												<p className="mt-2 text-sm text-muted-foreground italic">
+													{item.note}
+												</p>
+											)}
 										</CardContent>
 									</Card>
 								</motion.div>

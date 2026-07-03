@@ -53,6 +53,6 @@
     <line x1="0" y1="0" x2="-26" y2="22" stroke="#6fa8ff"/>
     <circle r="4" fill="#ffffff"/>
   </g>
-  <text x="80" y="392" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#f0e9ff">Splat Editor &#8212; SafetyTour</text>
+  <text x="80" y="392" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#f0e9ff">Splat Editor SafetyTour</text>
   <text x="80" y="420" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a68fd8">Gaussian Splatting &#183; visites de pr&#233;vention interactives</text>
 </svg>

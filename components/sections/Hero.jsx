@@ -46,10 +46,11 @@ export default function Hero() {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ delay: 0.6, duration: 0.8 }}
 					>
-						Je construis des produits IA de bout en bout — agents
-						LLM, RAG, pipelines de données — et les plateformes
-						SaaS qui les portent en production. Cofondateur de
-						WiseTwin, basé en Suisse romande.
+						Je construis des produits IA de bout en bout (agents
+						LLM, RAG, pipelines de données) ainsi que les
+						plateformes SaaS qui les portent en production.
+						Cofondateur de WiseTwin, société française basée à
+						Dunkerque, je vis aujourd'hui en Suisse romande.
 					</motion.p>
 
 					<motion.div
