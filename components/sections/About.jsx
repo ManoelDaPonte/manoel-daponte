@@ -177,7 +177,7 @@ export default function About() {
 						</div>
 
 						<motion.div
-							className="flex flex-col sm:flex-row gap-4"
+							className="space-y-3"
 							initial={{ opacity: 0, y: 20 }}
 							animate={
 								isVisible
@@ -186,46 +186,91 @@ export default function About() {
 							}
 							transition={{ duration: 0.6, delay: 1 }}
 						>
-							<motion.div
-								whileHover={{ scale: 1.05 }}
-								whileTap={{ scale: 0.95 }}
-							>
-								<Button
-									asChild
-									size="lg"
-									className="gap-2 w-full sm:w-auto"
+							<div className="flex flex-col sm:flex-row gap-3">
+								<motion.div
+									whileHover={{ scale: 1.05 }}
+									whileTap={{ scale: 0.95 }}
 								>
-									<a
-										href="https://github.com/ManoelDaPonte/CVs/raw/main/resume_cv_onepage.pdf"
-										target="_blank"
-										rel="noopener noreferrer"
+									<Button
+										asChild
+										size="lg"
+										className="gap-2 w-full sm:w-auto"
 									>
-										<Download size={20} />
-										CV (version courte)
-									</a>
-								</Button>
-							</motion.div>
+										<a
+											href="https://github.com/ManoelDaPonte/CVs/raw/main/resume_cv_onepage_fr.pdf"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<Download size={20} />
+											CV français (1 page)
+										</a>
+									</Button>
+								</motion.div>
 
-							<motion.div
-								whileHover={{ scale: 1.05 }}
-								whileTap={{ scale: 0.95 }}
-							>
-								<Button
-									asChild
-									size="lg"
-									variant="outline"
-									className="gap-2 w-full sm:w-auto"
+								<motion.div
+									whileHover={{ scale: 1.05 }}
+									whileTap={{ scale: 0.95 }}
 								>
-									<a
-										href="https://github.com/ManoelDaPonte/CVs/raw/main/resume_cv.pdf"
-										target="_blank"
-										rel="noopener noreferrer"
+									<Button
+										asChild
+										size="lg"
+										variant="outline"
+										className="gap-2 w-full sm:w-auto"
 									>
-										<Download size={20} />
-										CV (version détaillée)
-									</a>
-								</Button>
-							</motion.div>
+										<a
+											href="https://github.com/ManoelDaPonte/CVs/raw/main/resume_cv_fr.pdf"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<Download size={20} />
+											CV français (détaillé)
+										</a>
+									</Button>
+								</motion.div>
+							</div>
+
+							<div className="flex flex-col sm:flex-row gap-3">
+								<motion.div
+									whileHover={{ scale: 1.05 }}
+									whileTap={{ scale: 0.95 }}
+								>
+									<Button
+										asChild
+										size="lg"
+										className="gap-2 w-full sm:w-auto"
+									>
+										<a
+											href="https://github.com/ManoelDaPonte/CVs/raw/main/resume_cv_onepage_en.pdf"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<Download size={20} />
+											Resume English (1 page)
+										</a>
+									</Button>
+								</motion.div>
+
+								<motion.div
+									whileHover={{ scale: 1.05 }}
+									whileTap={{ scale: 0.95 }}
+								>
+									<Button
+										asChild
+										size="lg"
+										variant="outline"
+										className="gap-2 w-full sm:w-auto"
+									>
+										<a
+											href="https://github.com/ManoelDaPonte/CVs/raw/main/resume_cv_en.pdf"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<Download size={20} />
+											Resume English (detailed)
+										</a>
+									</Button>
+								</motion.div>
+							</div>
 						</motion.div>
 					</motion.div>
 				</div>
