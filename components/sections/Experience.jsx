@@ -44,7 +44,7 @@ export default function Experience() {
 				"Next.js, React, TypeScript, Python, FastAPI, Claude (Anthropic), OpenAI, pgvector, PostgreSQL, Prisma, Azure, Docker, GitHub Actions, PlayCanvas, Unity, Vercel",
 		},
 		{
-			title: "Data Engineer",
+			title: "AI Engineer & Data Engineer",
 			company: "TotalEnergies",
 			location: "Esbjerg, Danemark",
 			period: "Mars 2022 - Février 2024",
