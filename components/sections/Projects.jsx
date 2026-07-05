@@ -94,7 +94,7 @@ export default function Projects() {
 			],
 			year: "2025 - 2026",
 			location: "WiseTwin",
-			link: "https://wiseatlas.wisetwin.eu/",
+			link: null,
 			githubLink: null,
 			isFounder: true,
 			image: "/images/wiseatlas.svg",
