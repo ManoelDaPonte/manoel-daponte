@@ -175,23 +175,6 @@ export default function Projects() {
 			githubLink: "https://github.com/ManoelDaPonte/Invasion",
 			image: "/images/invasion-game.png",
 		},
-		{
-			title: "Classification NLP avec Correction de Biais",
-			description:
-				"Participation en équipe de 3 étudiants à une compétition internationale (3ème place sur le podium), développement d'algorithmes de classification de métiers basés sur des descriptions textuelles.",
-			technologies: [
-				"Python",
-				"NLP",
-				"Classification",
-				"Fairness algorithms",
-			],
-			year: "2021",
-			location: "Compétition Kaggle",
-			link: null,
-			githubLink: null,
-			image: "/images/nlp-classification.svg",
-			footerNote: "Le dépôt de ce projet n'a pas été conservé.",
-		},
 	];
 
 	// Animation variants

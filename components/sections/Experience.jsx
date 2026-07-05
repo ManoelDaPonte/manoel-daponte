@@ -44,21 +44,6 @@ export default function Experience() {
 				"Next.js, React, TypeScript, Python, FastAPI, Claude (Anthropic), OpenAI, pgvector, PostgreSQL, Prisma, Azure, Docker, GitHub Actions, PlayCanvas, Unity, Vercel",
 		},
 		{
-			title: "Cofondateur & Lead Developer",
-			company: "Bootstrap-Now",
-			location: "Toulouse, France",
-			period: "Mars 2024 - Présent",
-			description: [
-				"Conception et développement d'une plateforme SaaS facilitant l'accès des auto-entrepreneurs au marché.",
-				"Création d'un outil propriétaire de recherche d'opportunités business utilisant des algorithmes d'agrégation de données multicanaux.",
-				"Développement d'un générateur de business plans collaboratif associant intelligence artificielle et expertise humaine.",
-				"Conception d'une solution d'analyse de marché semi-automatisée guidant les utilisateurs dans leur étude de viabilité.",
-				"Établissement de partenariats stratégiques avec des incubateurs pour renforcer l'écosystème entrepreneurial.",
-			],
-			technologies:
-				"React/Next.js, Node.js, PostgreSQL, Prisma, OpenAI API, Vercel",
-		},
-		{
 			title: "Data Engineer",
 			company: "TotalEnergies",
 			location: "Esbjerg, Danemark",

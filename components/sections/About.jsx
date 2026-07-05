@@ -1,9 +1,17 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Download } from "lucide-react";
+import { Download, ChevronDown, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import {
+	DropdownMenu,
+	DropdownMenuTrigger,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuLabel,
+	DropdownMenuSeparator,
+} from "@/components/ui/dropdown-menu";
 import { IconCloud } from "@/components/magicui/icon-cloud";
 
 export default function About() {
@@ -177,7 +185,6 @@ export default function About() {
 						</div>
 
 						<motion.div
-							className="space-y-3"
 							initial={{ opacity: 0, y: 20 }}
 							animate={
 								isVisible
@@ -186,91 +193,70 @@ export default function About() {
 							}
 							transition={{ duration: 0.6, delay: 1 }}
 						>
-							<div className="flex flex-col sm:flex-row gap-3">
-								<motion.div
-									whileHover={{ scale: 1.05 }}
-									whileTap={{ scale: 0.95 }}
-								>
+							<DropdownMenu>
+								<DropdownMenuTrigger asChild>
 									<Button
-										asChild
 										size="lg"
 										className="gap-2 w-full sm:w-auto"
 									>
+										<Download size={20} />
+										Télécharger mon CV
+										<ChevronDown size={16} />
+									</Button>
+								</DropdownMenuTrigger>
+								<DropdownMenuContent
+									align="start"
+									className="w-64"
+								>
+									<DropdownMenuLabel>
+										Français
+									</DropdownMenuLabel>
+									<DropdownMenuItem asChild>
 										<a
 											href="https://github.com/ManoelDaPonte/CVs/raw/main/resume_cv_onepage_fr.pdf"
 											target="_blank"
 											rel="noopener noreferrer"
 										>
-											<Download size={20} />
-											CV français (1 page)
+											<FileText size={16} />
+											CV une page
 										</a>
-									</Button>
-								</motion.div>
-
-								<motion.div
-									whileHover={{ scale: 1.05 }}
-									whileTap={{ scale: 0.95 }}
-								>
-									<Button
-										asChild
-										size="lg"
-										variant="outline"
-										className="gap-2 w-full sm:w-auto"
-									>
+									</DropdownMenuItem>
+									<DropdownMenuItem asChild>
 										<a
 											href="https://github.com/ManoelDaPonte/CVs/raw/main/resume_cv_fr.pdf"
 											target="_blank"
 											rel="noopener noreferrer"
 										>
-											<Download size={20} />
-											CV français (détaillé)
+											<FileText size={16} />
+											CV détaillé
 										</a>
-									</Button>
-								</motion.div>
-							</div>
-
-							<div className="flex flex-col sm:flex-row gap-3">
-								<motion.div
-									whileHover={{ scale: 1.05 }}
-									whileTap={{ scale: 0.95 }}
-								>
-									<Button
-										asChild
-										size="lg"
-										className="gap-2 w-full sm:w-auto"
-									>
+									</DropdownMenuItem>
+									<DropdownMenuSeparator />
+									<DropdownMenuLabel>
+										English
+									</DropdownMenuLabel>
+									<DropdownMenuItem asChild>
 										<a
 											href="https://github.com/ManoelDaPonte/CVs/raw/main/resume_cv_onepage_en.pdf"
 											target="_blank"
 											rel="noopener noreferrer"
 										>
-											<Download size={20} />
-											Resume English (1 page)
+											<FileText size={16} />
+											One-page resume
 										</a>
-									</Button>
-								</motion.div>
-
-								<motion.div
-									whileHover={{ scale: 1.05 }}
-									whileTap={{ scale: 0.95 }}
-								>
-									<Button
-										asChild
-										size="lg"
-										variant="outline"
-										className="gap-2 w-full sm:w-auto"
-									>
+									</DropdownMenuItem>
+									<DropdownMenuItem asChild>
 										<a
 											href="https://github.com/ManoelDaPonte/CVs/raw/main/resume_cv_en.pdf"
 											target="_blank"
 											rel="noopener noreferrer"
 										>
-											<Download size={20} />
-											Resume English (detailed)
+											<FileText size={16} />
+											Detailed resume
 										</a>
-									</Button>
-								</motion.div>
-							</div>
+									</DropdownMenuItem>
+								</DropdownMenuContent>
+							</DropdownMenu>
 						</motion.div>
 					</motion.div>
 				</div>

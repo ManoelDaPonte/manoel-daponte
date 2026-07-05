@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { GraduationCap, Award, Calendar } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Education() {
@@ -54,17 +54,6 @@ export default function Education() {
 		},
 	];
 
-	const certifications = [
-		{
-			name: "Azure Data Engineer Associate",
-			issuer: "Microsoft",
-			date: "2025",
-			id: "DP-203",
-			note: "Certification arrivée à expiration, non renouvelée à ce jour.",
-			type: "certification",
-		},
-	];
-
 	// Animation variants
 	const container = {
 		hidden: { opacity: 0 },
@@ -93,124 +82,47 @@ export default function Education() {
 					}
 					transition={{ duration: 0.6 }}
 				>
-					<h2 className="text-3xl font-bold mb-4">
-						Formation & Certification
-					</h2>
+					<h2 className="text-3xl font-bold mb-4">Formation</h2>
 					<div className="h-1 w-20 bg-primary mx-auto"></div>
 					<p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-						Mon parcours académique et mes certifications
-						professionnelles.
+						Mon parcours académique.
 					</p>
 				</motion.div>
 
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-					{/* Education Section */}
-					<div>
-						<motion.div
-							className="flex items-center gap-2 mb-6"
-							initial={{ opacity: 0, x: -20 }}
-							animate={
-								isVisible
-									? { opacity: 1, x: 0 }
-									: { opacity: 0, x: -20 }
-							}
-							transition={{ duration: 0.6, delay: 0.2 }}
-						>
-							<GraduationCap size={24} className="text-primary" />
-							<h3 className="text-2xl font-semibold">
-								Formation
-							</h3>
-						</motion.div>
-
-						<motion.div
-							className="space-y-6"
-							variants={container}
-							initial="hidden"
-							animate={isVisible ? "show" : "hidden"}
-						>
-							{educations.map((item, index) => (
-								<motion.div
-									key={index}
-									variants={item}
-									whileHover={{ scale: 1.02, y: -5 }}
-									transition={{ duration: 0.2 }}
-								>
-									<Card className="overflow-hidden border-border hover:border-primary/50 transition-all duration-300">
-										<CardContent className="p-6">
-											<h4 className="text-lg font-bold">
-												{item.degree}
-											</h4>
-											<p className="text-primary mt-1">
-												{item.institution}
-											</p>
-											<div className="flex items-center gap-1 mt-2 text-muted-foreground">
-												<Calendar size={16} />
-												<span>{item.period}</span>
-											</div>
-											<p className="mt-3 text-muted-foreground text-sm">
-												{item.description}
-											</p>
-										</CardContent>
-									</Card>
-								</motion.div>
-							))}
-						</motion.div>
-					</div>
-
-					{/* Certifications Section */}
-					<div>
-						<motion.div
-							className="flex items-center gap-2 mb-6"
-							initial={{ opacity: 0, x: -20 }}
-							animate={
-								isVisible
-									? { opacity: 1, x: 0 }
-									: { opacity: 0, x: -20 }
-							}
-							transition={{ duration: 0.6, delay: 0.3 }}
-						>
-							<Award size={24} className="text-primary" />
-							<h3 className="text-2xl font-semibold">
-								Certification
-							</h3>
-						</motion.div>
-
-						<motion.div
-							className="space-y-6"
-							variants={container}
-							initial="hidden"
-							animate={isVisible ? "show" : "hidden"}
-						>
-							{certifications.map((item, index) => (
-								<motion.div
-									key={index}
-									variants={item}
-									whileHover={{ scale: 1.02, y: -5 }}
-									transition={{ duration: 0.2 }}
-								>
-									<Card className="overflow-hidden border-border hover:border-primary/50 transition-all duration-300">
-										<CardContent className="p-6">
-											<h4 className="text-lg font-bold">
-												{item.name}
-											</h4>
-											<p className="text-primary mt-1">
-												{item.issuer} ({item.id})
-											</p>
-											<div className="flex items-center gap-1 mt-2 text-muted-foreground">
-												<Calendar size={16} />
-												<span>Obtenu {item.date}</span>
-											</div>
-											{item.note && (
-												<p className="mt-2 text-sm text-muted-foreground italic">
-													{item.note}
-												</p>
-											)}
-										</CardContent>
-									</Card>
-								</motion.div>
-							))}
-						</motion.div>
-					</div>
+				<div className="max-w-3xl mx-auto">
+					<motion.div
+						className="space-y-6"
+						variants={container}
+						initial="hidden"
+						animate={isVisible ? "show" : "hidden"}
+					>
+						{educations.map((item, index) => (
+							<motion.div
+								key={index}
+								variants={item}
+								whileHover={{ scale: 1.02, y: -5 }}
+								transition={{ duration: 0.2 }}
+							>
+								<Card className="overflow-hidden border-border hover:border-primary/50 transition-all duration-300">
+									<CardContent className="p-6">
+										<h4 className="text-lg font-bold">
+											{item.degree}
+										</h4>
+										<p className="text-primary mt-1">
+											{item.institution}
+										</p>
+										<div className="flex items-center gap-1 mt-2 text-muted-foreground">
+											<Calendar size={16} />
+											<span>{item.period}</span>
+										</div>
+										<p className="mt-3 text-muted-foreground text-sm">
+											{item.description}
+										</p>
+									</CardContent>
+								</Card>
+							</motion.div>
+						))}
+					</motion.div>
 				</div>
 			</div>
 		</section>
